@@ -36,6 +36,13 @@
 
                 <h1> {{ message }} </h1>
                 <h2>Hello from {{source}}</h2>
+                <!-- Popular movie section  -->
+        <h3> News Sources</h3>
+        <ul>
+           {% for source in new_sources %}
+               <li>{{ source.name}}</li>
+           {% endfor %}
+       </ul>
 
             </div> <!-- #main -->
         </div> <!-- #main-container -->

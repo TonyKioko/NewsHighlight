@@ -13,10 +13,3 @@ def index():
     title = 'News Now'
     return render_template('index.html',news_sources=news_sources,title=title)
 
-@app.route('/news/<source>')
-def movie(source):
-
-    '''
-    View movie page function that returns the movie details page and its data
-    '''
-    return render_template('index.html',source= source)
