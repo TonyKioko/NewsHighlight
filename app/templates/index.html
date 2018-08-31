@@ -20,7 +20,7 @@
 
         <div class="header-container">
             <header class="wrapper clearfix">
-                <h1 class="title">h1.title</h1>
+                <h1 class="title">News Now</h1>
                 <nav>
                     <ul>
                         <li><a href="#">nav ul li a</a></li>
@@ -34,22 +34,33 @@
         <div class="main-container">
             <div class="main wrapper clearfix">
 
-                <h1> {{ message }} </h1>
-                <h2>Hello from {{source}}</h2>
+                <!-- <h1> {{ message }} </h1>
+                <h2>Hello from {{source}}</h2> -->
                 <!-- Popular movie section  -->
         <h3> News Sources</h3>
         <ul>
-           {% for source in new_sources %}
-               <li>{{ source.name}}</li>
+           {% for news in general %}
+               <li>{{ news.name}}</li>
            {% endfor %}
        </ul>
+       <h3> Articles</h3>
+        <ul>
+           {% for article in articles %}
+               <li>{{ article.title}}</li>
+           {% endfor %}
+       </ul>
+       <!-- <ul>
+        {% for news in news_sources %}
+            <li>{{ news.name}}</li>
+        {% endfor %}
+        </ul> -->
 
             </div> <!-- #main -->
         </div> <!-- #main-container -->
 
         <div class="footer-container">
             <footer class="wrapper">
-                <h3>footer</h3>
+                <h3>News Now</h3>
             </footer>
         </div>
 
