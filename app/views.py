@@ -20,7 +20,7 @@ def index():
     title = 'News Now'
     return render_template('index.html',title=title,business = business,health=health,science=science,sports = sports, technology = technology,entertainment = entertainment ,general=general)
 
-@app.route('/news/<id>')
+@app.route('/articles/<id>')
 def news(id):
     '''
     view page function that returns the news articles and its data
@@ -28,7 +28,7 @@ def news(id):
     articles = get_articles(id)
     title = 'News Now'
 
-    return render_template('news.html', articles=articles, title=title)
+    return render_template('articles.html', articles=articles, title=title)
     
 
 
