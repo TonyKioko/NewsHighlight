@@ -1,0 +1,13 @@
+
+{% macro displaySourceList(general) %}
+
+<ul>
+    {% for news in general %}
+        <li>{{ news.name}}</li>
+        <a href="articles/{{news.id}}">{{ news.id }}</a>
+
+        <!-- <a href="articles/{{news.id}}" target="_blank">{{ news.id }}</a> -->
+    {% endfor %}
+</ul>
+
+{% endmacro %}
