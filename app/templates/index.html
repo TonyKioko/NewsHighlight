@@ -1,5 +1,8 @@
 
 {% import 'macros.html' as macro%}
+{% extends 'base.html'%}
+
+{% block content%}
 <!doctype html>
 <html class="no-js" lang="">
     <head>
@@ -42,13 +45,12 @@
                 <!-- Popular movie section  -->
         <h3> News Sources</h3>
         <ul>
-                {{macro displaySourceList(general)}}
-           <!-- {% for news in general %}
+           {% for news in general %}
                <li>{{ news.name}}</li>
                <a href="articles/{{news.id}}">{{ news.id }}</a>
 
-                <a href="articles/{{news.id}}" target="_blank">{{ news.id }}</a> -->
-           <!-- {% endfor %} --> -->
+               <!-- <a href="articles/{{news.id}}" target="_blank">{{ news.id }}</a> -->
+           {% endfor %}
        </ul>
        <!-- <h3> Articles</h3> -->
         <!-- <ul>
@@ -77,3 +79,4 @@
         <script src="../static/js/main.js"></script> -->
     </body>
 </html>
+{% endblock %}

@@ -1,8 +1,8 @@
 
-{% macro displaySourceList(general) %}
+{% macro displaySourcesList(category) %}
 
 
-    {% for news in general %}
+    {% for news in category %}
         <li>{{ news.name}}</li>
         <a href="articles/{{news.id}}">{{ news.id }}</a>
 
