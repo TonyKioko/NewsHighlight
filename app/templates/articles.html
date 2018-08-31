@@ -1,0 +1,12 @@
+
+<div>
+    {% for article in articles %}
+        
+        <h1>{{article.date}}</h1>
+        <a href="{{article.url}}">{{article.description}}</a>
+        <img src="{{article.image}}" alt="image not found">
+        
+        <!-- <img src="{{article.urlToImage}}" alt="image not found" style="width:150px;height:150px;">
+        <p>{{article.publishedAt}}</p> -->
+    {% endfor %}
+</div>

@@ -73,7 +73,7 @@ def get_articles(id):
 
         if get_sources_response['articles']:
             article_results_list = get_sources_response['articles']
-            article_results = process_results(article_results_list)
+            article_results = process_article_results(article_results_list)
 
 
     return article_results
@@ -81,20 +81,20 @@ def get_articles(id):
 def process_article_results(article_list):
 
     article_results = []
-    for article in article_list:
-        # source_id = article.get('source')['id']
-        # source_name = article.get('source')['name']
-        id = article.get['id']
-        name = article.get['name']
-        author =article.get('author')
-        title = article.get('title')
-        description = article.get('description')
-        url = article.get('url')
-        urlToImage = article.get('urlToImage')
-        publishedAt= article.get(' publishedAt')
+    for articles in article_list:
+    
+        # id = article.get['source']('id')
+        # name = article.get['source']('name')
+        author =articles.get('author')
+        title = articles.get('title')
+        description = articles.get('description')
+        url = articles.get('url')
+        image = articles.get('urlToImage')
+        date= articles.get('publishedAt')
 
-        article_object = Article(id,name,author,title,description,url,urlToImage,publishedAt)
-        article_results.append(article_object)
+        if image:
+            article_object = Article(author,title,description,url,image,date)
+            article_results.append(article_object)
 
     return article_results
 

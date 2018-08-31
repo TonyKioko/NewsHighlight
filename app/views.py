@@ -28,6 +28,7 @@ def news(id):
     articles = get_articles(id)
     title = 'News Now'
 
+
     return render_template('articles.html', articles=articles, title=title)
     
 
