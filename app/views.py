@@ -1,6 +1,6 @@
 from flask import render_template,request
 from app import app
-from .requests import get_sources,get_articles
+from .requests import get_sources,get_articles,get_headline_articles
 
 
 @app.route('/')
@@ -30,7 +30,20 @@ def news(id):
 
 
     return render_template('articles.html', articles=articles, title=title)
+
+@app.route('/topheadlines/<en>')
+def hdlines(en):
+    '''
+    view page function that returns the news articles and its data
+    '''
+    headlines = get_headline_articles(en)
+    title = 'News Now'
+
+
+    return render_template('topheadlines.html', headlines=headlines, title=title)
+
     
+  
 
 
 

@@ -16,6 +16,8 @@ api_key = app.config['NEWS_API_KEY']
 base_url = app.config["NEWS_API_BASE_URL"]
 # Getting the article url
 articles_url = app.config["ARTICLES_URL"]
+# to headlines
+headlines_url = app.config["HEADLINES_URL"]
 
 def get_sources(category):
     '''
@@ -98,3 +100,18 @@ def process_article_results(article_list):
 
     return article_results
 
+def get_headline_articles(en):
+    get_articles_url = headlines_url.format(en,api_key)
+
+    with urllib.request.urlopen(get_articles_url) as url:
+        get_articles_data = url.read()
+        get_sources_response = json.loads(get_articles_data)
+
+        article_results = None
+
+        if get_sources_response['topheadlines']:
+            article_results_list = get_sources_response['topheadlines']
+            article_results = process_article_results(article_results_list)
+
+
+    return article_results
