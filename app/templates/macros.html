@@ -4,7 +4,9 @@
 <ul>
     {% for news in category %}
         <li>{{ news.name}}</li>
-        <a href="/articles/{{news.id}}">{{ news.id }}</a>
+        <a href="/articles/{{news.id}}">View top articles</a>
+
+        <!-- <a href="/articles/{{news.id}}">{{ news.id }}</a> -->
 
         
     {% endfor %}
