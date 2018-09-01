@@ -1,17 +1,33 @@
 
 {% macro displaySourcesList(category) %}
 
-<ul>
+
     {% for news in category %}
-        <li>{{ news.name}}</li>
+    <div class="col-md-4" style="height:200px;">
+        <h2><a href="{{news.url}}">{{ news.name}}</a></h2>
+        <p>{{news.description | truncate (100)}}</p>
         <a href="/articles/{{news.id}}">View top articles</a>
+    
+    </div>
 
         <!-- <a href="/articles/{{news.id}}">{{ news.id }}</a> -->
 
         
     {% endfor %}
 
-</ul>
-    
+
+{% endmacro %}
+
+{% macro displayArticles(source) %}
+    <h1 class="text-center">TOP HEADLINES</h1>
+    <hr>
+    {% for article in source %}
+
+    <a href="{{article.url}}">{{article.description | truncate(180)}}</a>
+    <img src="{{article.image}}" alt="image not found" style="width:250px;height:250px;border-radius: 50%;">
+    <h1>{{article.date }}</h1>
+
+    {% endfor %}
+
 
 {% endmacro %}

@@ -1,6 +1,8 @@
 
 {% import 'macros.html' as macro%}
+
 {% extends 'base.html'%}
+
 
 {% block content %}
 <!doctype html>
@@ -15,6 +17,8 @@
         {% endif %}
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Crimson+Text|Old+Standard+TT|Roboto" rel="stylesheet">
+
 
         <!-- <link rel="stylesheet" href="../static/css/normalize.min.css">
         <link rel="stylesheet" href="../static/css/main.css">
@@ -23,28 +27,16 @@
     </head>
     <body>
 
-        <div class="header-container">
-            <header class="wrapper clearfix">
-                <h1 class="title">News Now</h1>
-                <nav>
-                    <ul>
-                        <li><a href="#">nav ul li a</a></li>
-                        <li><a href="#">nav ul li a</a></li>
-                        <li><a href="#">nav ul li a</a></li>
-                        
-                    </ul>
-                </nav>
-            </header>
-        </div>
-
         <div class="main-container">
             <div class="main wrapper clearfix">
-
-                <!-- <h1> {{ message }} </h1>
-                <h2>Hello from {{source}}</h2> -->
-                <!-- Popular movie section  -->
-        <h3> News Sources</h3>
-        {{ macro.displaySourcesList(general) }}
+        <div class="container" style="font-family: 'Crimson Text', serif;font-size:20px">
+            <div class="col-md-12" id="general">
+                <h3 class="text-center">General News</h3>
+                <hr>
+                {{ macro.displaySourcesList(general) }}
+            </div>
+        </div>
+        
         <!-- <ul>
            {% for news in general %}
                <li>{{ news.name}}</li>
