@@ -3,10 +3,10 @@ p
 
 
     {% for news in category %}
-    <div class="col-md-4 col-sm-4" style="height:200px;">
-        <h2><a href="{{news.url}}">{{ news.name}}</a></h2>
+    <div class="col-md-4 col-sm-4" style="height:200px;text-align:center;border-right:1px dashed grey;border-left:1px solid grey">
+        <h2><a class="text-center"href="{{news.url}}">{{ news.name}}</a></h2>
         <p>{{news.description | truncate (100)}}</p>
-        <a href="/articles/{{news.id}}">View top articles</a>
+        <a class="btn btn-primary btn-block" href="/articles/{{news.id}}">View top articles</a>
 
     </div>
 
@@ -47,7 +47,7 @@ p
                                     <p class="list-group-item">Posted on {{article.date}}</p>
                                     <p class="card-link">
                                             {{article.description|truncate(160)}}...
-                                                <span><button><a class="btn btn-primary btn-outline" href="{{article.url}}" target="_blank">Read More</a></button>></span>
+                                                <span><a  href="{{article.url}}" target="_blank">Read More</a></span>
                                 
                                     </p>
                                     
