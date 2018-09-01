@@ -4,10 +4,10 @@
 <div>
     {% for article in articles %}
         
-        
+        <h1>TOP HEADLINES</h1>
         <a href="{{article.url}}">{{article.description | truncate(180)}}</a>
         <img src="{{article.image}}" alt="image not found" style="width:250px;height:250px;border-radius: 50%;">
-        <h1>{{article.date}}</h1>
+        <h1>{{article.date }}</h1>
 
         
         <!-- <img src="{{article.urlToImage}}" alt="image not found" style="width:150px;height:150px;">
