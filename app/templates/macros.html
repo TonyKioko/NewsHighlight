@@ -1,18 +1,18 @@
-
+p
 {% macro displaySourcesList(category) %}
 
 
     {% for news in category %}
-    <div class="col-md-4" style="height:200px;">
+    <div class="col-md-4 col-sm-4" style="height:200px;">
         <h2><a href="{{news.url}}">{{ news.name}}</a></h2>
         <p>{{news.description | truncate (100)}}</p>
         <a href="/articles/{{news.id}}">View top articles</a>
-    
+
     </div>
 
         <!-- <a href="/articles/{{news.id}}">{{ news.id }}</a> -->
 
-        
+
     {% endfor %}
 
 
@@ -21,11 +21,50 @@
 {% macro displayArticles(source) %}
     <h1 class="text-center">TOP HEADLINES</h1>
     <hr>
+    <div class="container">
+
+    </div>
     {% for article in source %}
 
-    <a href="{{article.url}}">{{article.description | truncate(180)}}</a>
+    <!-- <a href="{{article.url}}">{{article.description | truncate(180)}}</a>
     <img src="{{article.image}}" alt="image not found" style="width:250px;height:250px;border-radius: 50%;">
-    <h1>{{article.date }}</h1>
+    <h1>{{article.date }}</h1> -->
+
+    <div class="col-md-4" style="font-family: 'Crimson Text', serif;font-size:20px">
+            <div class="card" style="height:200px;">
+                <a href="{{article.url}}" target="_blank">
+                    <img class="card-img-top" src="{{article.image}}" alt="Image of {{article.title}}" style="height:260px;width:100%;">
+                </a>
+                <div class="card-body">
+                    <div class="card-text">
+                            <ul class="list-group list-group-flush">
+                                    <p class="list-group-item"><h3><em>{{article.title}}</em></h3></p>
+                                    <p class="list-group-item">Published on {{article.date}}</p>
+                                    <h4 class="card-link">
+                                            {{article.description|truncate(160)}}...
+                                                <span><a href="{{article.url}}" target="_blank">Read full article</a></span>
+                                
+                                        </h4>
+                                    
+
+                            </ul>
+
+                    </div>
+
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+    </div>
 
     {% endfor %}
 
