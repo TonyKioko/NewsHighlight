@@ -1,6 +1,6 @@
 # News Highlight
 #### News Highlight app created as an Independent Project on 31/08/2018
-#### Author: **Tony Kioko Munywoki**
+#### Author: **Tony Kioko**
 ## Description
 News Highlight is a python flask web application that allows users to view various world news sources.
 The application helps users to:

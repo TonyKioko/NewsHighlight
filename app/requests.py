@@ -40,13 +40,13 @@ def get_sources(category):
 
 def process_results(source_list):
     '''
-    Function  that processes the movie result and transform them to a list of Objects
+    Function  that processes the source result and transform them to a list of Objects
 
     Args:
-        movie_list: A list of dictionaries that contain movie details
+        source_list: A list of dictionaries that contain source details
 
     Returns :
-        movie_results: A list of movie objects
+        source_results: A list of source objects
     '''
     source_results = []
     for source_item in source_list:
@@ -58,9 +58,10 @@ def process_results(source_list):
         language = source_item.get('language')
         country = source_item.get('country')
 
-        source_object = Source(id,name,description,url,category,language,country)
-        source_results.append(source_object)
-  
+        if description:
+            source_object = Source(id,name,description,url,category,language,country)
+            source_results.append(source_object)
+    
 
     return source_results
 
@@ -100,8 +101,8 @@ def process_article_results(article_list):
 
     return article_results
 
-def get_headline_articles(en):
-    get_articles_url = headlines_url.format(en,api_key)
+def get_headline_articles(language):
+    get_articles_url = headlines_url.format(language,api_key)
 
     with urllib.request.urlopen(get_articles_url) as url:
         get_articles_data = url.read()

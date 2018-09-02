@@ -32,7 +32,7 @@ def news(id):
     return render_template('articles.html', articles=articles, title=title)
 
 @app.route('/topheadlines/<en>')
-def hdlines(en):
+def topheadlines(en):
     '''
     view page function that returns the news articles and its data
     '''

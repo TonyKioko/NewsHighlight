@@ -4,7 +4,8 @@
 <section id="headlines" style="margin-top:120px;">
     <div class="container" >
         <div class="row">
-            <h1 class="text-center">TOP HEADLINES AROUND THE WORLD</h1>
+            <h1 class="text-center" style="font-family: 'Crimson Text', serif;">Top Headlines Around The World</h1>
+            <hr>
             {% for article in headlines %}
     
     
@@ -12,7 +13,7 @@
     <div class="col-md-4" style="font-family: 'Crimson Text', serif;font-size:20px">
             <div class="card" style="height:200px;">
                 <div class="card-header">
-                        <h3 class="list-group-item"><em>{{article.title}}</em></h3>
+                        <h3 class="list-group-item"><em>{{article.title | truncate(80)}}</em></h3>
                 </div>
                 <a href="{{article.url}}" target="_blank">
                     <img class="card-img-top m-b-4" id="article-img" src="{{article.image}}" alt="Image of {{article.title}}" style="height:260px;width:100%;">
@@ -25,7 +26,7 @@
                                     <p>- {{article.author}}</p>
                                     <p class="list-group-item">Posted on {{article.date}}</p>
                                     <p class="card-link">
-                                            {{article.description|truncate(160)}}...
+                                            {{article.description|truncate(120)}}...
                                                 <span><a  href="{{article.url}}" target="_blank">Read More</a></span>
                                 
                                     </p>
@@ -53,6 +54,7 @@
     </div>
     
     {% endfor %}
+    <hr>
         </div>
     </div>
     {% endblock%}
