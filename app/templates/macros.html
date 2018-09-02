@@ -1,10 +1,10 @@
-p
+
 {% macro displaySourcesList(category) %}
 
 
     {% for news in category %}
     <div class="col-md-4 col-sm-4" style="height:200px;text-align:center;border-right:1px dashed grey;border-left:1px solid grey">
-        <h2><a class="text-center"href="{{news.url}}">{{ news.name}}</a></h2>
+        <h3><a class="text-center"href="{{news.url}}">{{ news.name}}</a></h3>
         <p>{{news.description | truncate (100)}}</p>
         <a class="btn btn-primary btn-block" href="/articles/{{news.id}}">View top articles</a>
 
