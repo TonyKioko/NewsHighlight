@@ -18,6 +18,9 @@ The application helps users to:
 * Run source virtual/bin/activate to activate the above created virtual environment.
 * To run the app, type ./start.sh from your virtual environment on the terminal. In your favorite browser, open the link provided by the local host.
 
+### Live Link ###
+ https://newsnow11.herokuapp.com/
+
 ## Technologies used ##
 
 * Python 3.6
