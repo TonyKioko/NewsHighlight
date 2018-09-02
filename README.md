@@ -15,7 +15,7 @@ The application helps users to:
 * Have python3.6 installed in your machine
 * Navigate into cloned file using the termianl.
 * Run python3.6 -m venv --without-pip virtual to create a virtual environment.
-* Run source virtual/bin/activate to activate the above craeted virtual environment.
+* Run source virtual/bin/activate to activate the above created virtual environment.
 * To run the app, type ./start.sh from your virtual environment on the terminal. It will give you a local host link that will open the app on a website.
 
 ## Technologies used ##

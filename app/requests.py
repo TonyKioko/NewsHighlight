@@ -109,8 +109,8 @@ def get_headline_articles(en):
 
         article_results = None
 
-        if get_sources_response['topheadlines']:
-            article_results_list = get_sources_response['topheadlines']
+        if get_sources_response['articles']:
+            article_results_list = get_sources_response['articles']
             article_results = process_article_results(article_results_list)
 
 
