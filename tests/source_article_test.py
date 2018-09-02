@@ -1,7 +1,7 @@
 import unittest
-from models import source,article
-Source = source.Source
-Article = article.Article
+from app.models import Source,Article
+# Source = source.Source
+# Article = article.Article
 
 class SourceTest(unittest.TestCase):
     '''
@@ -37,5 +37,5 @@ class ArticleTest(unittest.TestCase):
 
 
 
-if __name__ == '__main__':
-    unittest.main()
+# if __name__ == '__main__':
+#     unittest.main()

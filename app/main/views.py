@@ -1,9 +1,10 @@
 from flask import render_template,request
-from app import app
-from .requests import get_sources,get_articles,get_headline_articles
+from . import main
+from ..requests import get_sources,get_articles,get_headline_articles
+from ..models import Source,Article
 
 
-@app.route('/')
+@main.route('/')
 def index():
 
     '''
@@ -22,7 +23,7 @@ def index():
     title = 'News Now'
     return render_template('index.html',title=title,general=general,business = business,sports = sports,technology = technology,health=health,science=science,entertainment = entertainment)
 
-@app.route('/articles/<id>')
+@main.route('/articles/<id>')
 def articles(id):
     '''
     view page function that returns the source articles and its data
@@ -33,7 +34,7 @@ def articles(id):
 
     return render_template('articles.html', articles=articles, title=title)
 
-@app.route('/topheadlines/<en>')
+@main.route('/topheadlines/<en>')
 def topheadlines(en):
     '''
     view page function that returns the topheadlines by langauge
