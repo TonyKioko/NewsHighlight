@@ -6,7 +6,7 @@
     <div class="col-md-4 col-sm-4" style="height:200px;text-align:center;border-right:1px dashed grey;border-left:1px solid grey">
         <h3><a class="text-center"href="{{news.url}}">{{ news.name}}</a></h3>
         <p>{{news.description | truncate (100)}}</p>
-        <a class="btn btn-primary btn-block" href="/articles/{{news.id}}">View top articles</a>
+        <a class="btn btn-primary btn-block" href="/articles/{{news.id}}">View Articles</a>
 
     </div>
 
@@ -26,9 +26,7 @@
     </div>
     {% for article in source %}
 
-    <!-- <a href="{{article.url}}">{{article.description | truncate(180)}}</a>
-    <img src="{{article.image}}" alt="image not found" style="width:250px;height:250px;border-radius: 50%;">
-    <h1>{{article.date }}</h1> -->
+   
 
     <div class="col-md-4" style="font-family: 'Crimson Text', serif;font-size:20px">
             <div class="card" style="height:200px;">
@@ -43,7 +41,7 @@
                     <div class="card-text">
                             <ul class="list-group list-group-flush">
                                     <!-- <p class="list-group-item"><h3><em>{{article.title}}</em></h3></p> -->
-                                    <p>- {{article.author}}</p>
+                                    <p>By: {{article.author}}</p>
                                     <p class="list-group-item">Posted on {{article.date}}</p>
                                     <p class="card-link">
                                             {{article.description|truncate(160)}}...

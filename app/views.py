@@ -10,20 +10,22 @@ def index():
     View root page function that returns the index page and its data
     '''
     general = get_sources('general')
+    business = get_sources('business')
     sports = get_sources('sports')
     technology = get_sources('technology')
-    entertainment = get_sources('entertainment')
-    business = get_sources('business')
-    health = get_sources('health')
     science = get_sources('science')
+    health = get_sources('health')
+    entertainment = get_sources('entertainment')
+    
+    
 
     title = 'News Now'
-    return render_template('index.html',title=title,business = business,health=health,science=science,sports = sports, technology = technology,entertainment = entertainment ,general=general)
+    return render_template('index.html',title=title,general=general,business = business,sports = sports,technology = technology,health=health,science=science,entertainment = entertainment)
 
 @app.route('/articles/<id>')
-def news(id):
+def articles(id):
     '''
-    view page function that returns the news articles and its data
+    view page function that returns the source articles and its data
     '''
     articles = get_articles(id)
     title = 'News Now'
@@ -34,9 +36,9 @@ def news(id):
 @app.route('/topheadlines/<en>')
 def topheadlines(en):
     '''
-    view page function that returns the news articles and its data
+    view page function that returns the topheadlines by langauge
     '''
-    headlines = get_headline_articles(en)
+    headlines = get_headline_articles('en')
     title = 'News Now'
 
 
