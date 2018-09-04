@@ -8,7 +8,7 @@ from ..models import Source,Article
 def general():
 
     '''
-    View root page function that returns the general news sources
+    View root page function that returns the general news sources by category
     '''
     general = get_sources_by_cat('general')
     business = get_sources_by_cat('business')
