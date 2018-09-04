@@ -34,7 +34,7 @@ def configure_request(app):
 # to headlines
 # headlines_url = app.config["HEADLINES_URL"]
 
-def get_sources(category):
+def get_sources_by_cat(category):
     '''
     Function that gets the json response to our url request
     '''
@@ -80,7 +80,7 @@ def process_results(source_list):
 
     return source_results
 
-def get_articles(id):
+def get_all_articles(id):
     get_articles_url = articles_url.format(id,api_key)
 
     with urllib.request.urlopen(get_articles_url) as url:
