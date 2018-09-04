@@ -63,5 +63,5 @@ def topheadlines(en):
 #     '''
 #     news_sources = get_sources('sources')
 #     title = 'News Now'
-#     return render_template('index.html',news_sources=news_sources,title=title)
+#     return render_template('general.html',news_sources=news_sources,title=title)
 
